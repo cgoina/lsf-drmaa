@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     const char * job_argv[2] = {"20", NULL};
     drmaa_job_template_t *jt = NULL;
     char *job_name    = NULL;
-    const char* job_native = "-q normal -P jacs -W 0:210 -R \"select[haswell]\"";
+    const char* job_native = "-q normal -n 2 -P jacs -W 0:210 -R \"affinity[core(1)] select[sandy,ssd_scratch]\"";
     char job_id_out[MAX_LEN_JOBID];
     int stat;
     int exited, exit_status, signaled;
